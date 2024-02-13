@@ -17,7 +17,7 @@ const { activeNav } = Astro.props;
   <a id="skip-to-content" href="#main-content">Skip to content</a>
   <div class="nav-container">
     <div class="top-nav-wrap">
-      <a href="/" class="logo">
+      <a href="/" class="logo hover:rotate-6">
         {
           LOGO_IMAGE.enable ? (
             <img
@@ -59,24 +59,24 @@ const { activeNav } = Astro.props;
         </button>
         <ul id="menu-items" class="display-none sm:flex">
           <li>
-            <a href="/posts" class={activeNav === "posts" ? "active" : ""}>
+            <a href="/posts" class={`hover:rotate-3 ${activeNav === "posts" ? "active" : ""}`}>
               Posts
             </a>
           </li>
           <li>
-            <a href="/tags" class={activeNav === "tags" ? "active" : ""}>
+            <a href="/tags" class={`hover:rotate-3 ${activeNav === "tags" ? "active" : ""}`}>
               Tags
             </a>
           </li>
           <li>
-            <a href="/about" class={activeNav === "about" ? "active" : ""}>
+            <a href="/about" class={`hover:rotate-3 ${activeNav === "about" ? "active" : ""}`}>
               About
             </a>
           </li>
           <li>
             <LinkButton
               href="/search"
-              className={`focus-outline p-3 sm:p-1 ${
+              className={`focus-outline p-3 sm:p-1 hover:rotate-12 ${
                 activeNav === "search" ? "active" : ""
               }`}
               ariaLabel="search"

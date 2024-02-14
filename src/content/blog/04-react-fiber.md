@@ -76,7 +76,7 @@ Each "fiber" contains information about a component, its input, and its output. 
 
 If we create a tree of fibers for the code snippet above, the relationship would go as such:
 
-![An example of a tree of fibers.](/images/04-react-fiber-01.png)
+![An example of a tree of fibers.](../../assets/04-react-fiber-01.png)
 
 - the **h1** fiber (as it is the first child) is the `child` of the **div** fiber
 - the **h2** fiber is the `sibling` of **h1** fiber
@@ -139,7 +139,7 @@ export default function App() {
 
 The equivalent tree of fibers for the code above may be represented as:
 
-![The fiber tree for the code above.](/images/04-react-fiber-02.png)
+![The fiber tree for the code above.](../../assets/04-react-fiber-02.png)
 
 Now, to see what React Fiber does in the background, we need to take a look at the (usually hidden) files.
 
@@ -226,11 +226,11 @@ function completeWork(current, workInProgress, renderLanes) {
 
 If we take a look at the console, this is what initially appears:
 
-![The console on initial render.](/images/04-react-fiber-03.png)
+![The console on initial render.](../../assets/04-react-fiber-03.png)
 
 We can see that the `beginWork()` function first flows down the fiber tree, up until it finds the innermost child. And then, the `completeWork()` function flows upwards the fiber tree, up until it returns to the outermost **FiberRootNode**.
 
-![The console after a re-render.](/images/04-react-fiber-04.png)
+![The console after a re-render.](../../assets/04-react-fiber-04.png)
 
 Now, when a re-render is triggered, we can see that the work loop basically just begins again!
 
